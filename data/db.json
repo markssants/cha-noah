@@ -1,0 +1,639 @@
+{
+  "settings": {
+    "babyName": "Noah",
+    "eventTitle": "Chá de Bebê do Noah",
+    "eventSubtitle": "Vamos comemorar esse momento tão especial com a gente!",
+    "eventDate": "2026-11-15T12:00:00",
+    "eventDateDisplay": "15/11 Domingo",
+    "eventTimeDisplay": "12:00 Horas",
+    "adminPin": "noah2024",
+    "locationNotice": "kkkkkkkkkkk",
+    "locationName": "Chácara & Espaço Recanto das Flores",
+    "locationAddress": "Rua das Palmeiras, 350 - Chácaras de Recreio, São Paulo - SP",
+    "locationMapEmbed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.1975!2d-46.6565!3d-23.5615!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDMzJzQxLjQiUyA0NsKwMzknMjMuNCJX!5e0!3m2!1spt-BR!2sbr!4v1",
+    "locationMapsLink": "https://maps.google.com/?q=Recanto+das+Palmeiras",
+    "locationWazeLink": "https://waze.com/ul?q=Recanto+das+Palmeiras",
+    "pixKey": "noah.chadebebe@email.com",
+    "pixReceiver": "Mamãe do Noah",
+    "pixBank": "Nubank / Pix",
+    "momPhone": "5511999999999"
+  },
+  "metrics": {
+    "views": 29,
+    "uniqueVisitors": 2,
+    "clicks": {
+      "btn_local": 9,
+      "btn_presentes": 8,
+      "btn_rsvp": 5,
+      "btn_pix": 0,
+      "btn_waze": 0,
+      "btn_maps": 0,
+      "btn_confirmar_submit": 4,
+      "btn_ver_convite": 5
+    },
+    "history": [
+      {
+        "event": "click",
+        "button": "btn_local",
+        "visitorId": "v_1788909841201_tzfafdt",
+        "timestamp": "2026-09-09T11:56:58.031Z"
+      },
+      {
+        "event": "click",
+        "button": "btn_local",
+        "visitorId": "v_1788909841201_tzfafdt",
+        "timestamp": "2026-09-09T11:56:50.762Z"
+      },
+      {
+        "event": "page_view",
+        "visitorId": "v_1788909841201_tzfafdt",
+        "timestamp": "2026-09-09T11:56:45.521Z"
+      },
+      {
+        "event": "page_view",
+        "visitorId": "v_1788909841201_tzfafdt",
+        "timestamp": "2026-09-09T01:34:26.154Z"
+      },
+      {
+        "event": "click",
+        "button": "btn_ver_convite",
+        "visitorId": "v_1788909841201_tzfafdt",
+        "timestamp": "2026-09-09T01:33:31.823Z"
+      },
+      {
+        "event": "click",
+        "button": "btn_rsvp",
+        "visitorId": "v_1788909841201_tzfafdt",
+        "timestamp": "2026-09-09T01:33:11.482Z"
+      },
+      {
+        "event": "click",
+        "button": "btn_presentes",
+        "visitorId": "v_1788909841201_tzfafdt",
+        "timestamp": "2026-09-09T01:33:09.988Z"
+      },
+      {
+        "event": "click",
+        "button": "btn_presentes",
+        "visitorId": "v_1788909841201_tzfafdt",
+        "timestamp": "2026-09-09T01:33:02.407Z"
+      },
+      {
+        "event": "click",
+        "button": "btn_local",
+        "visitorId": "v_1788909841201_tzfafdt",
+        "timestamp": "2026-09-09T01:32:58.197Z"
+      },
+      {
+        "event": "page_view",
+        "visitorId": "v_1788909841201_tzfafdt",
+        "timestamp": "2026-09-09T01:31:38.638Z"
+      },
+      {
+        "event": "page_view",
+        "visitorId": "v_1788909841201_tzfafdt",
+        "timestamp": "2026-09-09T01:31:31.751Z"
+      },
+      {
+        "event": "page_view",
+        "visitorId": "v_1788909841201_tzfafdt",
+        "timestamp": "2026-09-09T01:09:45.945Z"
+      },
+      {
+        "event": "page_view",
+        "visitorId": "v_1788909841201_tzfafdt",
+        "timestamp": "2026-09-09T01:04:25.192Z"
+      },
+      {
+        "event": "page_view",
+        "visitorId": "v_1788909841201_tzfafdt",
+        "timestamp": "2026-09-09T00:50:01.734Z"
+      },
+      {
+        "event": "page_view",
+        "visitorId": "v_1788909841201_tzfafdt",
+        "timestamp": "2026-09-09T00:49:48.300Z"
+      },
+      {
+        "event": "page_view",
+        "visitorId": "v_1788909841201_tzfafdt",
+        "timestamp": "2026-09-09T00:43:13.618Z"
+      },
+      {
+        "event": "page_view",
+        "visitorId": "v_1788909841201_tzfafdt",
+        "timestamp": "2026-09-09T00:38:27.366Z"
+      },
+      {
+        "event": "page_view",
+        "visitorId": "v_1788909841201_tzfafdt",
+        "timestamp": "2026-09-09T00:38:26.838Z"
+      },
+      {
+        "event": "page_view",
+        "visitorId": "v_1788909841201_tzfafdt",
+        "timestamp": "2026-09-09T00:38:04.189Z"
+      },
+      {
+        "event": "page_view",
+        "visitorId": "v_1788909841201_tzfafdt",
+        "timestamp": "2026-09-09T00:36:04.647Z"
+      },
+      {
+        "event": "page_view",
+        "visitorId": "v_1788909841201_tzfafdt",
+        "timestamp": "2026-09-09T00:33:37.822Z"
+      },
+      {
+        "event": "page_view",
+        "visitorId": "v_1788909841201_tzfafdt",
+        "timestamp": "2026-09-08T23:59:35.363Z"
+      },
+      {
+        "event": "click",
+        "button": "btn_rsvp",
+        "visitorId": "v_1788909841201_tzfafdt",
+        "timestamp": "2026-09-08T23:58:45.345Z"
+      },
+      {
+        "event": "click",
+        "button": "btn_ver_convite",
+        "visitorId": "v_1788909841201_tzfafdt",
+        "timestamp": "2026-09-08T23:58:43.627Z"
+      },
+      {
+        "event": "click",
+        "button": "btn_presentes",
+        "visitorId": "v_1788909841201_tzfafdt",
+        "timestamp": "2026-09-08T23:58:36.850Z"
+      },
+      {
+        "event": "click",
+        "button": "btn_presentes",
+        "visitorId": "v_1788909841201_tzfafdt",
+        "timestamp": "2026-09-08T23:58:24.678Z"
+      },
+      {
+        "event": "click",
+        "button": "btn_local",
+        "visitorId": "v_1788909841201_tzfafdt",
+        "timestamp": "2026-09-08T23:58:19.538Z"
+      },
+      {
+        "event": "page_view",
+        "visitorId": "v_1788909841201_tzfafdt",
+        "timestamp": "2026-09-08T23:56:13.850Z"
+      },
+      {
+        "event": "click",
+        "button": "btn_rsvp",
+        "visitorId": "v_1788909841201_tzfafdt",
+        "timestamp": "2026-09-08T23:53:53.437Z"
+      },
+      {
+        "event": "click",
+        "button": "btn_ver_convite",
+        "visitorId": "v_1788909841201_tzfafdt",
+        "timestamp": "2026-09-08T23:53:47.488Z"
+      },
+      {
+        "event": "click",
+        "button": "btn_presentes",
+        "visitorId": "v_1788909841201_tzfafdt",
+        "timestamp": "2026-09-08T23:53:23.323Z"
+      },
+      {
+        "event": "click",
+        "button": "btn_local",
+        "visitorId": "v_1788909841201_tzfafdt",
+        "timestamp": "2026-09-08T23:53:18.128Z"
+      },
+      {
+        "event": "page_view",
+        "visitorId": "v_1788909841201_tzfafdt",
+        "timestamp": "2026-09-08T23:49:29.588Z"
+      },
+      {
+        "event": "page_view",
+        "visitorId": "v_1788909841201_tzfafdt",
+        "timestamp": "2026-09-08T23:49:23.743Z"
+      },
+      {
+        "event": "page_view",
+        "visitorId": "v_1788909841201_tzfafdt",
+        "timestamp": "2026-09-08T23:49:09.703Z"
+      },
+      {
+        "event": "page_view",
+        "visitorId": "v_1788909841201_tzfafdt",
+        "timestamp": "2026-09-08T23:49:06.465Z"
+      },
+      {
+        "event": "click",
+        "button": "btn_ver_convite",
+        "visitorId": "v_1788909841201_tzfafdt",
+        "timestamp": "2026-09-08T23:45:01.255Z"
+      },
+      {
+        "event": "page_view",
+        "visitorId": "v_1788909841201_tzfafdt",
+        "timestamp": "2026-09-08T23:44:58.879Z"
+      },
+      {
+        "event": "click",
+        "button": "btn_ver_convite",
+        "visitorId": "test_ver_convite",
+        "timestamp": "2026-09-08T23:43:30.876Z"
+      },
+      {
+        "event": "click",
+        "button": "btn_local",
+        "visitorId": "v_1788909841201_tzfafdt",
+        "timestamp": "2026-09-08T23:40:43.308Z"
+      },
+      {
+        "event": "click",
+        "button": "btn_presentes",
+        "visitorId": "v_1788909841201_tzfafdt",
+        "timestamp": "2026-09-08T23:40:38.659Z"
+      },
+      {
+        "event": "click",
+        "button": "btn_rsvp",
+        "visitorId": "v_1788909841201_tzfafdt",
+        "timestamp": "2026-09-08T23:40:33.646Z"
+      },
+      {
+        "event": "page_view",
+        "visitorId": "v_1788909841201_tzfafdt",
+        "timestamp": "2026-09-08T23:40:16.487Z"
+      },
+      {
+        "event": "page_view",
+        "visitorId": "v_1788909841201_tzfafdt",
+        "timestamp": "2026-09-08T23:39:50.227Z"
+      },
+      {
+        "event": "page_view",
+        "visitorId": "v_1788909841201_tzfafdt",
+        "timestamp": "2026-09-08T23:34:20.198Z"
+      },
+      {
+        "event": "page_view",
+        "visitorId": "v_1788909841201_tzfafdt",
+        "timestamp": "2026-09-08T23:33:49.064Z"
+      },
+      {
+        "event": "page_view",
+        "visitorId": "v_1788909841201_tzfafdt",
+        "timestamp": "2026-09-08T23:27:15.889Z"
+      },
+      {
+        "event": "page_view",
+        "visitorId": "v_1788909841201_tzfafdt",
+        "timestamp": "2026-09-08T23:26:06.903Z"
+      },
+      {
+        "event": "click",
+        "button": "btn_rsvp",
+        "visitorId": "v_1788909841201_tzfafdt",
+        "timestamp": "2026-09-08T23:25:20.083Z"
+      },
+      {
+        "event": "click",
+        "button": "btn_presentes",
+        "visitorId": "v_1788909841201_tzfafdt",
+        "timestamp": "2026-09-08T23:25:07.052Z"
+      },
+      {
+        "event": "click",
+        "button": "btn_local",
+        "visitorId": "v_1788909841201_tzfafdt",
+        "timestamp": "2026-09-08T23:25:04.064Z"
+      },
+      {
+        "event": "click",
+        "button": "btn_local",
+        "visitorId": "v_1788909841201_tzfafdt",
+        "timestamp": "2026-09-08T23:24:48.548Z"
+      },
+      {
+        "event": "page_view",
+        "visitorId": "v_1788909841201_tzfafdt",
+        "timestamp": "2026-09-08T23:24:01.274Z"
+      },
+      {
+        "event": "click",
+        "button": "btn_presentes",
+        "visitorId": "test_1",
+        "timestamp": "2026-09-08T23:22:05.541Z"
+      },
+      {
+        "event": "click",
+        "button": "btn_local",
+        "visitorId": "test_1",
+        "timestamp": "2026-09-08T23:22:05.533Z"
+      }
+    ]
+  },
+  "rsvps": [
+    {
+      "id": "rsvp_1788917602863_eg8xq",
+      "name": "nnlnlinilnln",
+      "phone": "(79) 98797-8978",
+      "guestsCount": 3,
+      "message": "lnilninini",
+      "createdAt": "2026-09-09T01:33:22.863Z"
+    },
+    {
+      "id": "rsvp_1788911934829_uzgm7",
+      "name": "flavia barros",
+      "phone": "(12) 38172-3918",
+      "guestsCount": 3,
+      "message": "asdnalisdnliasnlidas",
+      "createdAt": "2026-09-08T23:58:54.829Z"
+    },
+    {
+      "id": "rsvp_1788911644351_uvusf",
+      "name": "hohohohuihun",
+      "phone": "(58) 76786-8768",
+      "guestsCount": 2,
+      "message": "huhluhnlinilnil",
+      "createdAt": "2026-09-08T23:54:04.351Z"
+    },
+    {
+      "id": "rsvp_manual_1788909801924",
+      "name": "Madrinha Juliana",
+      "phone": "(11) 97777-6655",
+      "guestsCount": 2,
+      "message": "Com certeza estarei lá!",
+      "createdAt": "2026-09-08T23:23:21.924Z"
+    },
+    {
+      "id": "rsvp-sample-1",
+      "name": "Tia Camila e Família",
+      "phone": "(11) 98765-4321",
+      "guestsCount": 3,
+      "message": "Estamos super ansiosos para conhecer o príncipe Noah! ❤️",
+      "createdAt": "2026-09-08T18:30:00.000Z"
+    },
+    {
+      "id": "rsvp-sample-2",
+      "name": "Vovó Helena",
+      "phone": "(11) 99123-4567",
+      "guestsCount": 2,
+      "message": "Contando os dias para abraçar meu netinho amado!",
+      "createdAt": "2026-09-08T19:15:00.000Z"
+    }
+  ],
+  "gifts": [
+    {
+      "id": "g1",
+      "title": "Fralda Pampers Confort Sec - Tam P",
+      "category": "Fraldas",
+      "brand": "Pampers / Huggies",
+      "reserved": true,
+      "reservedBy": {
+        "id": "res_legacy_g1",
+        "name": "Teste",
+        "phone": "",
+        "reservedAt": "2026-09-08T23:53:37.017Z"
+      },
+      "quantity": 1,
+      "reservations": [
+        {
+          "id": "res_legacy_g1",
+          "name": "Teste",
+          "phone": "",
+          "reservedAt": "2026-09-08T23:53:37.017Z"
+        }
+      ]
+    },
+    {
+      "id": "g2",
+      "title": "Fralda Pampers Confort Sec - Tam M",
+      "category": "Fraldas",
+      "brand": "Pampers",
+      "reserved": false,
+      "reservedBy": {
+        "id": "res_legacy_g2",
+        "name": "Tia Marina",
+        "phone": "",
+        "reservedAt": "2026-09-08T23:23:01.427Z"
+      },
+      "quantity": 5,
+      "reservations": [
+        {
+          "id": "res_legacy_g2",
+          "name": "Tia Marina",
+          "phone": "",
+          "reservedAt": "2026-09-08T23:23:01.427Z"
+        }
+      ]
+    },
+    {
+      "id": "g3",
+      "title": "Fralda Huggies Supreme Care - Tam M",
+      "category": "Fraldas",
+      "brand": "Huggies",
+      "reserved": false,
+      "reservedBy": null,
+      "quantity": 1,
+      "reservations": []
+    },
+    {
+      "id": "g4",
+      "title": "Fralda Pampers Confort Sec - Tam G",
+      "category": "Fraldas",
+      "brand": "Pampers",
+      "reserved": false,
+      "reservedBy": null,
+      "quantity": 1,
+      "reservations": []
+    },
+    {
+      "id": "g5",
+      "title": "Fralda Huggies Supreme Care - Tam G",
+      "category": "Fraldas",
+      "brand": "Huggies",
+      "reserved": false,
+      "reservedBy": null,
+      "quantity": 1,
+      "reservations": []
+    },
+    {
+      "id": "g6",
+      "title": "Fralda Descartável - Tam XG",
+      "category": "Fraldas",
+      "brand": "Pampers / Huggies",
+      "reserved": false,
+      "reservedBy": null,
+      "quantity": 1,
+      "reservations": []
+    },
+    {
+      "id": "g7",
+      "title": "Kit Lenços Umedecidos (4 pacotes)",
+      "category": "Higiene",
+      "brand": "Mustela / Pampers / Huggies",
+      "reserved": true,
+      "reservedBy": {
+        "id": "res_legacy_g7",
+        "name": "milmlinxzc",
+        "phone": "",
+        "reservedAt": "2026-09-08T23:58:40.345Z"
+      },
+      "quantity": 1,
+      "reservations": [
+        {
+          "id": "res_legacy_g7",
+          "name": "milmlinxzc",
+          "phone": "",
+          "reservedAt": "2026-09-08T23:58:40.345Z"
+        }
+      ]
+    },
+    {
+      "id": "g8",
+      "title": "Pomada Preventiva de Assaduras",
+      "category": "Higiene",
+      "brand": "Desitin ou Bepantol Baby",
+      "reserved": false,
+      "reservedBy": null,
+      "quantity": 1,
+      "reservations": []
+    },
+    {
+      "id": "g9",
+      "title": "Sabonete Líquido Cabeça aos Pés",
+      "category": "Higiene",
+      "brand": "Granado Bebê ou Mustela",
+      "reserved": true,
+      "reservedBy": {
+        "id": "res_legacy_g9",
+        "name": "miininon",
+        "phone": "",
+        "reservedAt": "2026-09-09T01:33:07.051Z"
+      },
+      "quantity": 1,
+      "reservations": [
+        {
+          "id": "res_legacy_g9",
+          "name": "miininon",
+          "phone": "",
+          "reservedAt": "2026-09-09T01:33:07.051Z"
+        }
+      ]
+    },
+    {
+      "id": "g10",
+      "title": "Óleo Hidratante Corporal de Bebê",
+      "category": "Higiene",
+      "brand": "Granado ou Johnson's",
+      "reserved": false,
+      "reservedBy": null,
+      "quantity": 1,
+      "reservations": []
+    },
+    {
+      "id": "g11",
+      "title": "Kit Manicure Bebê (Tesoura e Lixas)",
+      "category": "Higiene",
+      "brand": "Lolly / Buba",
+      "reserved": false,
+      "reservedBy": null,
+      "quantity": 1,
+      "reservations": []
+    },
+    {
+      "id": "g12",
+      "title": "Termômetro Digital Ponta Flexível",
+      "category": "Higiene",
+      "brand": "G-Tech",
+      "reserved": false,
+      "reservedBy": null,
+      "quantity": 1,
+      "reservations": []
+    },
+    {
+      "id": "g13",
+      "title": "Kit 3 Paninhos de Boca (Fraldinhas)",
+      "category": "Enxoval",
+      "brand": "100% Algodão",
+      "reserved": false,
+      "reservedBy": null,
+      "quantity": 1,
+      "reservations": []
+    },
+    {
+      "id": "g14",
+      "title": "Toalha de Banho com Capuz Aveludada",
+      "category": "Enxoval",
+      "brand": "Algodão macio",
+      "reserved": false,
+      "reservedBy": null,
+      "quantity": 1,
+      "reservations": []
+    },
+    {
+      "id": "g15",
+      "title": "Kit 3 Babadores Bandana",
+      "category": "Enxoval",
+      "brand": "Algodão com fecho",
+      "reserved": false,
+      "reservedBy": null,
+      "quantity": 1,
+      "reservations": []
+    },
+    {
+      "id": "g16",
+      "title": "Manta Quentinha ou Cueiro",
+      "category": "Enxoval",
+      "brand": "Toque suave",
+      "reserved": false,
+      "reservedBy": null,
+      "quantity": 1,
+      "reservations": []
+    },
+    {
+      "id": "g17",
+      "title": "Kit Bodies Manga Curta Tam M",
+      "category": "Enxoval",
+      "brand": "Algodão egípcio / canelado",
+      "reserved": false,
+      "reservedBy": null,
+      "quantity": 1,
+      "reservations": []
+    },
+    {
+      "id": "g18",
+      "title": "Kit Bodies Manga Curta Tam G",
+      "category": "Enxoval",
+      "brand": "Algodão macio",
+      "reserved": false,
+      "reservedBy": null,
+      "quantity": 1,
+      "reservations": []
+    },
+    {
+      "id": "g19",
+      "title": "Mordedor com Água Massageador de Gengiva",
+      "category": "Enxoval",
+      "brand": "Buba / Nuk",
+      "reserved": false,
+      "reservedBy": null,
+      "quantity": 1,
+      "reservations": []
+    },
+    {
+      "id": "g20",
+      "title": "Brinquedinho Chocalho Macio de Pelúcia",
+      "category": "Enxoval",
+      "brand": "Antialérgico",
+      "reserved": false,
+      "reservedBy": null,
+      "quantity": 1,
+      "reservations": []
+    }
+  ]
+}

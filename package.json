@@ -1,0 +1,21 @@
+{
+  "name": "cha-noah",
+  "version": "1.0.0",
+  "description": "Site interativo para o Chá de Bebê do Noah com confirmação de presença e painel administrativo",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "cha-de-bebe",
+    "rsvp",
+    "dashboard",
+    "convite"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}

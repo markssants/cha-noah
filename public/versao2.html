@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chá de Bebê do Noah 👶 15/11 às 12:00 | Confirmação de Presença</title>
+  <meta name="description" content="Venha comemorar com a gente o Chá de Bebê do Noah no dia 15/11 às 12:00! Confirme sua presença, confira as sugestões de presentes e a localização da festa.">
+  <meta name="theme-color" content="#759268">
+
+  <!-- Favicon Ursinho / Bebê -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧸</text></svg>">
+
+  <!-- Folha de Estilos Versão 1 -->
+  <link rel="stylesheet" href="/css/style-v1.css">
+
+  <!-- Canvas Confetti CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+  <!-- Brilho Ambiente Aconchegante -->
+  <div class="ambient-glow"></div>
+
+  <!-- Botão Flutuante de Caixinha de Música -->
+  <button id="musicToggleBtn" class="floating-audio-btn" title="Tocar melodia suave de ninar" aria-label="Tocar melodia de ninar">
+    🎵
+  </button>
+
+  <main class="site-wrapper">
+    <!-- ===================================================
+         CARTÃO PRINCIPAL DO CONVITE (ESTILO DO CONVITE)
+         =================================================== -->
+    <article class="invite-card-container">
+      
+      <!-- Topo: Arte de Balões, Ursinho e Arco do Convite -->
+      <header class="invite-header-art">
+        <div class="invite-hero-banner">
+          <img src="/img/Convite Cha.png" alt="Arco de Balões Verdes e Dourados e Ursinho do Chá do Noah" class="invite-hero-img">
+        </div>
+      </header>
+
+      <!-- Conteúdo de Texto e Tipografia Nobre -->
+      <section class="invite-content">
+        
+        <!-- Coração Dourado Superior -->
+        <div class="decor-heart-top">♥</div>
+
+        <!-- Título "Chá de Bebê do Noah" -->
+        <div class="invite-title-wrap">
+          <span class="title-cha-de">Chá de</span>
+          <h1 class="title-bebe-3d">Bebê</h1>
+          <span class="title-do">= do =</span>
+          <span class="title-noah-calligraphy">Noah</span>
+        </div>
+
+        <!-- Frase de Recepção -->
+        <p class="invite-subtitle">
+          Vamos comemorar esse momento tão especial com a gente!
+        </p>
+
+        <!-- Divisor com Coraçãozinho -->
+        <div class="invite-divider">
+          <span class="divider-heart">♥</span>
+        </div>
+
+        <!-- Grade de Data e Horário (15/11 às 12:00) -->
+        <div class="invite-datetime-grid">
+          <div class="datetime-item">
+            <div class="datetime-icon-circle">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            </div>
+            <div class="datetime-main">15/11</div>
+            <div class="datetime-sub">Domingo</div>
+          </div>
+
+          <div class="datetime-separator"></div>
+
+          <div class="datetime-item">
+            <div class="datetime-icon-circle">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div class="datetime-main">12:00</div>
+            <div class="datetime-sub">Horas</div>
+          </div>
+        </div>
+
+        <!-- Aviso em Destaque: Local da festa (Traga roupa de banho) -->
+        <div class="invite-notice-box" data-modal-target="modal-location" role="button" tabindex="0">
+          <div class="invite-notice-icon">📍</div>
+          <div class="invite-notice-text">
+            <span class="notice-title">Local da festa</span>
+            <span class="notice-sub">(Traga roupa de banho 🏊‍♂️)</span>
+          </div>
+        </div>
+
+        <!-- Os 3 Botões Redondos Interativos com Costura -->
+        <nav class="invite-buttons-row" aria-label="Ações do convite">
+          
+          <!-- Botão 1: Local da Festa -->
+          <button class="interactive-action-btn" id="btnOpenLocation" data-modal-target="modal-location">
+            <div class="action-circle">
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <span class="action-btn-label">Local<br>da Festa</span>
+          </button>
+
+          <!-- Botão 2: Sugestões de Presente -->
+          <button class="interactive-action-btn" id="btnOpenGifts" data-modal-target="modal-gifts">
+            <div class="action-circle">
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg>
+            </div>
+            <span class="action-btn-label">Sugestões<br>de Presente</span>
+          </button>
+
+          <!-- Botão 3: Confirmar Presença (Destaque Dourado) -->
+          <button class="interactive-action-btn featured" id="btnOpenRsvp" data-modal-target="modal-rsvp">
+            <div class="action-circle">
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><polyline points="9 14 11 16 15 12"/></svg>
+            </div>
+            <span class="action-btn-label">Confirmar<br>Presença</span>
+          </button>
+
+        </nav>
+
+        <!-- Pílula de Instrução Interativa -->
+        <div>
+          <span class="action-banner-pill">
+            <span class="pill-heart">♥</span> Clique nos botões para interagir!
+          </span>
+        </div>
+
+        <!-- Contador Regressivo da Chegada do Evento -->
+        <section class="countdown-section" aria-label="Contagem regressiva">
+          <div class="countdown-title">
+            <span>✨</span> Contando os dias para celebrar <span>✨</span>
+          </div>
+          <div class="countdown-grid">
+            <div class="countdown-box">
+              <div class="countdown-number" id="countDays">00</div>
+              <div class="countdown-unit">Dias</div>
+            </div>
+            <div class="countdown-box">
+              <div class="countdown-number" id="countHours">00</div>
+              <div class="countdown-unit">Horas</div>
+            </div>
+            <div class="countdown-box">
+              <div class="countdown-number" id="countMinutes">00</div>
+              <div class="countdown-unit">Min</div>
+            </div>
+            <div class="countdown-box">
+              <div class="countdown-number" id="countSeconds">00</div>
+              <div class="countdown-unit">Seg</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Base do Convite: Foto Real da Decoração & Cubos N O A H -->
+        <div class="invite-footer-blocks">
+          
+          <!-- Foto Preview da Decoração Real -->
+          <div class="decor-photo-preview">
+            <img src="/img/decoracao-tema.jpg" alt="Decoração Oficial do Chá com balões verde sage, dourado e ursinhos">
+            <div class="decor-photo-caption">
+              <span>🧸</span> Tema Oficial: Verde Sage, Dourado & Ursinhos <span>✨</span>
+            </div>
+          </div>
+
+          <!-- Cubos Dourados N O A H -->
+          <div class="baby-blocks-row">
+            <div class="baby-block">
+              <span class="block-crown">👑</span>
+              <span class="block-letter">N</span>
+            </div>
+            <div class="baby-block">
+              <span class="block-crown">♥</span>
+              <span class="block-letter">O</span>
+            </div>
+            <div class="baby-block">
+              <span class="block-crown">👑</span>
+              <span class="block-letter">A</span>
+            </div>
+            <div class="baby-block">
+              <span class="block-crown">♥</span>
+              <span class="block-letter">H</span>
+            </div>
+          </div>
+
+        </div>
+
+      </section>
+    </article>
+
+    <!-- Rodapé -->
+    <footer class="site-footer">
+      <p>Feito com amor para a chegada do Noah 💚</p>
+      <a href="/admin" class="admin-access-link" id="linkAdminAccess">
+        <span>👑</span> Painel da Mamãe
+      </a>
+    </footer>
+  </main>
+
+  <!-- ===================================================
+       MODAL 1: CONFIRMAR PRESENÇA (RSVP)
+       =================================================== -->
+  <div class="modal-overlay" id="modal-rsvp" role="dialog" aria-modal="true" aria-labelledby="modalRsvpTitle">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div class="modal-header-title">
+          <div class="modal-header-icon">📋</div>
+          <h2 id="modalRsvpTitle">Confirmar Presença</h2>
+        </div>
+        <button class="modal-close-btn" aria-label="Fechar">&times;</button>
+      </div>
+
+      <div class="modal-body">
+        <div class="rsvp-welcome-box">
+          <h3>Sua presença é muito especial!</h3>
+          <p>Por favor, preencha os dados abaixo para organizarmos tudo com muito carinho.</p>
+        </div>
+
+        <!-- Formulário -->
+        <form id="rsvpForm">
+          <div class="form-group">
+            <label class="form-label" for="guestName">Seu Nome Completo <span class="required">*</span></label>
+            <input type="text" id="guestName" class="form-input" placeholder="Ex: Camila Silva" required autocomplete="name">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="guestPhone">WhatsApp / Telefone <span class="required">*</span></label>
+            <input type="tel" id="guestPhone" class="form-input" placeholder="(11) 99999-9999" required autocomplete="tel">
+            <span class="form-helper">Para enviarmos lembretes e informações do evento.</span>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="guestsCount">Quantas pessoas com você?</label>
+            <select id="guestsCount" class="form-select">
+              <option value="1">Apenas eu (1 pessoa)</option>
+              <option value="2">2 pessoas</option>
+              <option value="3">3 pessoas</option>
+              <option value="4">4 pessoas</option>
+              <option value="5">5 pessoas ou mais</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="guestMessage">Recadinho com carinho para o Noah (opcional)</label>
+            <textarea id="guestMessage" class="form-textarea" placeholder="Deixe uma mensagem amorosa para os papais e para o Noah..."></textarea>
+          </div>
+
+          <button type="submit" class="btn-submit-rsvp" id="btnSubmitRsvp">
+            <span>Confirmar Minha Presença</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg>
+          </button>
+        </form>
+
+        <!-- Mensagem de Sucesso após Envio -->
+        <div class="rsvp-success-card" id="rsvpSuccess">
+          <div class="success-icon-wrap">🎉</div>
+          <h3>Presença Confirmada!</h3>
+          <p>Obrigado por celebrar esse momento tão especial conosco! O Noah já está muito feliz em saber que você estará lá.</p>
+          
+          <a href="#" id="btnWhatsappNotify" target="_blank" rel="noopener noreferrer" class="btn-whatsapp-notify">
+            <span>💬</span> Avisar a Mamãe no WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================================================
+       MODAL 2: SUGESTÕES DE PRESENTES
+       =================================================== -->
+  <div class="modal-overlay" id="modal-gifts" role="dialog" aria-modal="true" aria-labelledby="modalGiftsTitle">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div class="modal-header-title">
+          <div class="modal-header-icon">🎁</div>
+          <h2 id="modalGiftsTitle">Sugestões de Presente</h2>
+        </div>
+        <button class="modal-close-btn" aria-label="Fechar">&times;</button>
+      </div>
+
+      <div class="modal-body">
+        
+        <!-- Card de Mimo em Dinheiro / PIX -->
+        <div class="pix-gift-card">
+          <div class="pix-badge">⭐ Sugestão Especial</div>
+          <h4>Mimo em Dinheiro / PIX do Noah</h4>
+          <p>Para quem preferir ajudar com o enxoval e quartinho do Noah ou mora longe:</p>
+          <div class="pix-key-box">
+            <span class="pix-key-text" id="pixKeyText">noah.chadebebe@email.com</span>
+            <button class="btn-copy-pix" id="btnCopyPix">Copiar Chave</button>
+          </div>
+        </div>
+
+        <!-- Filtros de Categorias -->
+        <div class="gifts-category-nav" role="tablist">
+          <button class="category-tab-btn active" data-category="all">Todos</button>
+          <button class="category-tab-btn" data-category="Fraldas">Fraldas 👶</button>
+          <button class="category-tab-btn" data-category="Higiene">Higiene 🧴</button>
+          <button class="category-tab-btn" data-category="Enxoval">Enxoval 🧸</button>
+        </div>
+
+        <!-- Lista Dinâmica de Presentes -->
+        <div class="gifts-grid" id="giftsListContainer">
+          <!-- Carregado via JS -->
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================================================
+       MODAL 3: LOCAL DO EVENTO
+       =================================================== -->
+  <div class="modal-overlay" id="modal-location" role="dialog" aria-modal="true" aria-labelledby="modalLocationTitle">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div class="modal-header-title">
+          <div class="modal-header-icon">📍</div>
+          <h2 id="modalLocationTitle">Local da Festa</h2>
+        </div>
+        <button class="modal-close-btn" aria-label="Fechar">&times;</button>
+      </div>
+
+      <div class="modal-body">
+        
+        <!-- Alerta Chamativo da Roupa de Banho -->
+        <div class="location-hero-alert">
+          <div class="location-alert-icon">🏊‍♂️</div>
+          <div>
+            <h4>Traga roupa de banho!</h4>
+            <p>O local conta com piscina e área de lazer! Não esqueça seu traje de banho e toalha para curtirmos juntos esse dia ensolarado.</p>
+          </div>
+        </div>
+
+        <!-- Caixa de Detalhes do Local -->
+        <div class="location-details-box">
+          <div class="location-venue-name" id="locationVenueName">Chácara & Espaço Recanto das Flores</div>
+          <div class="location-address" id="locationAddressText">Rua das Palmeiras, 350 - Chácaras de Recreio, São Paulo - SP</div>
+
+          <div class="location-nav-buttons">
+            <a href="https://maps.google.com/?q=Recanto+das+Palmeiras" target="_blank" rel="noopener noreferrer" class="btn-nav-action btn-nav-maps" id="linkMaps">
+              <span>🗺️</span> Google Maps
+            </a>
+            <a href="https://waze.com/ul?q=Recanto+das+Palmeiras" target="_blank" rel="noopener noreferrer" class="btn-nav-action btn-nav-waze" id="linkWaze">
+              <span>🚗</span> Waze
+            </a>
+            <button class="btn-copy-address" id="btnCopyAddress">
+              <span>📋</span> Copiar Endereço Completo
+            </button>
+          </div>
+        </div>
+
+        <!-- Iframe do Mapa Interativo -->
+        <div class="location-map-container">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.1975!2d-46.6565!3d-23.5615!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDMzJzQxLjQiUyA0NsKwMzknMjMuNCJX!5e0!3m2!1spt-BR!2sbr!4v1" 
+            title="Mapa do Local"
+            loading="lazy">
+          </iframe>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript do Site -->
+  <script src="/js/app.js"></script>
+</body>
+</html>

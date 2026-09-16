@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Painel da Mamãe 👑 Chá de Bebê do Noah</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👑</text></svg>">
+  <link rel="stylesheet" href="/css/admin.css">
+</head>
+<body>
+
+  <!-- ===================================================
+       1. TELA DE LOGIN DO ADMIN
+       =================================================== -->
+  <main class="admin-login-wrapper" id="adminLoginWrapper">
+    <div class="login-card">
+      <div class="login-badge-icon">👑</div>
+      <h1 class="login-title">Painel da Mamãe</h1>
+      <p class="login-subtitle">Área de acompanhamento do Chá de Bebê do Noah</p>
+
+      <form id="adminLoginForm">
+        <label for="adminPinInput" style="display:none;">PIN de Acesso</label>
+        <input 
+          type="password" 
+          id="adminPinInput" 
+          class="login-input" 
+          placeholder="Digite a senha" 
+          required 
+          autocomplete="current-password"
+        >
+        <button type="submit" class="btn-login" id="btnLoginSubmit">
+          Acessar Painel ✨
+        </button>
+      </form>
+
+      <a href="/" class="login-back-link">← Voltar ao Convite do Noah</a>
+    </div>
+  </main>
+
+  <!-- ===================================================
+       2. DASHBOARD COMPLETO (LOGADO)
+       =================================================== -->
+  <div class="admin-dashboard-wrapper" id="adminDashboardWrapper">
+    
+    <!-- Top Bar -->
+    <header class="admin-top-bar">
+      <div class="admin-header-title">
+        <h1>Painel do Chá do Noah 🍼</h1>
+        <p>Acompanhe presenças confirmadas, acessos e cliques no site em tempo real</p>
+      </div>
+
+      <div class="admin-top-actions">
+        <a href="/" target="_blank" class="btn-admin-action btn-site-view">
+          <span>🌐</span> Ver Convite
+        </a>
+        <button class="btn-admin-action btn-export-csv" id="btnExportCsv">
+          <span>📥</span> Baixar Lista Excel (CSV)
+        </button>
+        <button class="btn-admin-action btn-logout" id="btnLogout">
+          <span>🚪</span> Sair
+        </button>
+      </div>
+    </header>
+
+    <!-- Cards de Métricas Principais -->
+    <section class="metrics-cards-grid" aria-label="Métricas principais">
+      
+      <!-- Total Confirmados -->
+      <article class="metric-stat-card featured">
+        <div class="metric-header">
+          <span>Total Confirmados</span>
+          <div class="metric-icon-badge">✅</div>
+        </div>
+        <div class="metric-number" id="statTotalGuests">0</div>
+        <div class="metric-footer-note" id="statTotalResponses">0 respostas registradas</div>
+      </article>
+
+      <!-- Total de Visualizações -->
+      <article class="metric-stat-card">
+        <div class="metric-header">
+          <span>Acessos ao Site</span>
+          <div class="metric-icon-badge">👁️</div>
+        </div>
+        <div class="metric-number" id="statTotalViews">0</div>
+        <div class="metric-footer-note" id="statUniqueVisitors">0 pessoas únicas</div>
+      </article>
+
+      <!-- Total de Interações/Cliques -->
+      <article class="metric-stat-card">
+        <div class="metric-header">
+          <span>Total de Cliques</span>
+          <div class="metric-icon-badge">🖱️</div>
+        </div>
+        <div class="metric-number" id="statTotalClicks">0</div>
+        <div class="metric-footer-note">Interações nos botões</div>
+      </article>
+
+      <!-- Presentes Reservados -->
+      <article class="metric-stat-card">
+        <div class="metric-header">
+          <span>Presentes Escolhidos</span>
+          <div class="metric-icon-badge">🎁</div>
+        </div>
+        <div class="metric-number" id="statGiftsCount">0 de 0</div>
+        <div class="metric-footer-note">Itens já reservados</div>
+      </article>
+
+    </section>
+
+    <!-- Rastreamento de Interesse por Botão -->
+    <section class="clicks-tracking-section">
+      <div class="section-title-row">
+        <h2><span>📊</span> O que os convidados mais clicaram</h2>
+      </div>
+
+      <div class="clicks-breakdown-grid">
+        <div class="click-pill-item">
+          <div class="click-pill-icon">📋</div>
+          <div class="click-pill-info">
+            <span class="click-pill-name">Abriram Confirmação</span>
+            <span class="click-pill-count" id="clickCountRsvp">0</span>
+          </div>
+        </div>
+
+        <div class="click-pill-item">
+          <div class="click-pill-icon">📍</div>
+          <div class="click-pill-info">
+            <span class="click-pill-name">Virão o Local</span>
+            <span class="click-pill-count" id="clickCountLocation">0</span>
+          </div>
+        </div>
+
+        <div class="click-pill-item">
+          <div class="click-pill-icon">🎁</div>
+          <div class="click-pill-info">
+            <span class="click-pill-name">Olharam Presentes</span>
+            <span class="click-pill-count" id="clickCountGifts">0</span>
+          </div>
+        </div>
+
+        <div class="click-pill-item">
+          <div class="click-pill-icon">💳</div>
+          <div class="click-pill-info">
+            <span class="click-pill-name">Copiaram o PIX</span>
+            <span class="click-pill-count" id="clickCountPix">0</span>
+          </div>
+        </div>
+
+        <div class="click-pill-item">
+          <div class="click-pill-icon">💌</div>
+          <div class="click-pill-info">
+            <span class="click-pill-name">Abriram o Convite</span>
+            <span class="click-pill-count" id="clickCountInvite">0</span>
+          </div>
+        </div>
+
+        <div class="click-pill-item">
+          <div class="click-pill-icon">🚗</div>
+          <div class="click-pill-info">
+            <span class="click-pill-name">Abriram GPS / Waze</span>
+            <span class="click-pill-count" id="clickCountWaze">0</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tabela Completa de Convidados -->
+    <section class="guests-table-section">
+      <div class="section-title-row">
+        <h2>
+          <span>📋</span> Lista de Convidados Confirmados
+          <span class="badge-guests-count" id="guestsCountBadge" style="margin-left: 0.5rem;">0 convidados</span>
+        </h2>
+      </div>
+
+      <div class="table-controls-bar">
+        <div class="search-input-wrap">
+          <span class="search-icon-pos">🔍</span>
+          <input type="text" id="searchGuestsInput" class="search-guests-input" placeholder="Buscar por nome, telefone ou recado...">
+        </div>
+
+        <button class="btn-add-manual" id="btnAddManualGuest">
+          <span>➕</span> Adicionar Convidado Manual
+        </button>
+      </div>
+
+      <div class="table-responsive-wrapper">
+        <table class="guests-table">
+          <thead>
+            <tr>
+              <th>Convidado</th>
+              <th>WhatsApp</th>
+              <th>Pessoas</th>
+              <th>Recado com Carinho</th>
+              <th>Data</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody id="guestsTableBody">
+            <!-- Injetado via JS -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ===================================================
+         GERENCIAR LISTA DE PRESENTES COMPLETA
+         =================================================== -->
+    <section class="gifts-manager-section">
+      <div class="section-title-row">
+        <h2>
+          <span>🎁</span> Gerenciar Lista de Presentes
+          <span class="badge-guests-count" id="giftsCountBadge">0 presentes</span>
+        </h2>
+        <button class="btn-add-gift" id="btnOpenAddGiftModal">
+          <span>➕</span> Adicionar Presente
+        </button>
+      </div>
+
+      <!-- Resumo rápido -->
+      <div class="gifts-summary-strip">
+        <div class="gifts-summary-item active" data-status-filter="all" id="filterGiftsAll">
+          <span class="summary-count" id="sumGiftsTotal">0</span>
+          <span class="summary-label">Total Cadastrados</span>
+        </div>
+        <div class="gifts-summary-item" data-status-filter="available" id="filterGiftsAvailable">
+          <span class="summary-count" id="sumGiftsAvailable">0</span>
+          <span class="summary-label">🟢 Disponíveis</span>
+        </div>
+        <div class="gifts-summary-item" data-status-filter="reserved" id="filterGiftsReserved">
+          <span class="summary-count" id="sumGiftsReserved">0</span>
+          <span class="summary-label">🎁 Já Reservados</span>
+        </div>
+      </div>
+
+      <!-- Barra de Pesquisa e Filtros de Categoria -->
+      <div class="gifts-filter-bar">
+        <div class="search-input-wrap">
+          <span class="search-icon-pos">🔍</span>
+          <input type="text" id="searchGiftsInput" class="search-guests-input" placeholder="Buscar presente por nome ou marca...">
+        </div>
+
+        <div class="category-pills-row" id="giftsCategoryPills">
+          <button class="cat-pill active" data-category="all">Todas</button>
+          <button class="cat-pill" data-category="Fraldas">🍼 Fraldas</button>
+          <button class="cat-pill" data-category="Higiene">🧴 Higiene</button>
+          <button class="cat-pill" data-category="Enxoval">🧸 Enxoval</button>
+          <button class="cat-pill" data-category="Outros">✨ Outros</button>
+        </div>
+      </div>
+
+      <!-- Lista / Grid de Todos os Presentes -->
+      <div class="all-gifts-grid" id="allGiftsContainer">
+        <!-- Injetado via JS -->
+      </div>
+    </section>
+
+    <!-- Modal Adicionar / Editar Presente -->
+    <div class="admin-modal-overlay" id="giftModalOverlay" style="display: none;">
+      <div class="admin-modal-card">
+        <div class="admin-modal-header">
+          <h3 id="giftModalTitle">Adicionar Presente 🎁</h3>
+          <button type="button" class="btn-close-modal" id="btnCloseGiftModal" aria-label="Fechar">✕</button>
+        </div>
+
+        <form id="giftModalForm">
+          <input type="hidden" id="modalGiftId" value="">
+
+          <div class="modal-form-group">
+            <label for="modalGiftTitle">Nome do Presente *</label>
+            <input 
+              type="text" 
+              id="modalGiftTitle" 
+              class="settings-input" 
+              placeholder="Ex: Fralda Pampers Confort Sec - Tam G" 
+              required
+            >
+          </div>
+
+          <div class="modal-form-group">
+            <label for="modalGiftCategory">Categoria *</label>
+            <select id="modalGiftCategory" class="settings-input" required>
+              <option value="Fraldas">🍼 Fraldas</option>
+              <option value="Higiene">🧴 Higiene</option>
+              <option value="Enxoval" selected>🧸 Enxoval</option>
+              <option value="Roupinhas">👶 Roupinhas</option>
+              <option value="Quarto">🛏️ Quarto / Berço</option>
+              <option value="Alimentação">🥣 Alimentação</option>
+              <option value="Brinquedos">🧩 Brinquedos</option>
+              <option value="Outros">✨ Outros</option>
+            </select>
+          </div>
+
+          <div class="modal-form-group">
+            <label for="modalGiftBrand">Marca / Sugestão / Observação</label>
+            <input 
+              type="text" 
+              id="modalGiftBrand" 
+              class="settings-input" 
+              placeholder="Ex: Pampers, Huggies ou algodão 100%"
+            >
+          </div>
+
+          <div class="modal-form-group">
+            <label for="modalGiftQuantity">Quantidade Desejada (Quantas unidades pode receber?) *</label>
+            <input 
+              type="number" 
+              id="modalGiftQuantity" 
+              class="settings-input" 
+              min="1" 
+              max="99" 
+              value="1" 
+              required
+            >
+            <small style="display:block; margin-top: 0.35rem; color: #777; font-size: 0.78rem;">
+              Ex: 1 para banheira ou carrinho; 2, 3 ou mais para pacotes de fraldas, paninhos ou roupinhas.
+            </small>
+          </div>
+
+          <div class="modal-form-actions">
+            <button type="button" class="btn-cancel-modal" id="btnCancelGiftModal">Cancelar</button>
+            <button type="submit" class="btn-save-modal" id="btnSaveGiftSubmit">Salvar Presente ✨</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+
+    <!-- Configurações Rápidas -->
+    <section class="settings-section">
+      <div class="section-title-row">
+        <h2><span>⚙️</span> Configurações do Convite</h2>
+      </div>
+
+      <form id="adminSettingsForm">
+        <div class="settings-grid">
+          <div class="settings-form-group">
+            <label for="settingPixKey">Chave PIX do Noah</label>
+            <input type="text" id="settingPixKey" class="settings-input">
+          </div>
+
+          <div class="settings-form-group">
+            <label for="settingVenueName">Nome do Local</label>
+            <input type="text" id="settingVenueName" class="settings-input">
+          </div>
+
+          <div class="settings-form-group">
+            <label for="settingVenueAddress">Endereço Completo</label>
+            <input type="text" id="settingVenueAddress" class="settings-input">
+          </div>
+
+          <div class="settings-form-group">
+            <label for="settingNotice">Aviso em Destaque</label>
+            <input type="text" id="settingNotice" class="settings-input">
+          </div>
+
+          <div class="settings-form-group">
+            <label for="settingAdminPin">Senha / PIN do Painel da Mãe</label>
+            <input type="text" id="settingAdminPin" class="settings-input">
+          </div>
+        </div>
+
+        <div>
+          <button type="submit" class="btn-save-settings">💾 Salvar Alterações</button>
+          <button type="button" class="btn-reset-metrics" id="btnResetMetrics">🔄 Zerar Métricas de Teste</button>
+        </div>
+      </form>
+    </section>
+
+  </div>
+
+  <script src="/js/admin.js"></script>
+</body>
+</html>
