@@ -173,6 +173,23 @@ function renderDashboard(data) {
   // 5. Configurações
   if (data.settings) {
     if (document.getElementById('settingPixKey')) document.getElementById('settingPixKey').value = data.settings.pixKey || '';
+    if (document.getElementById('settingMomPhone')) {
+      const rawMom = (data.settings.momPhone || '').replace(/\D/g, '');
+      let formattedMom = data.settings.momPhone || '';
+      if (rawMom.startsWith('55') && (rawMom.length === 12 || rawMom.length === 13)) {
+        const dddAndNumber = rawMom.substring(2);
+        if (dddAndNumber.length === 11) {
+          formattedMom = dddAndNumber.replace(/^(\d{2})(\d{5})(\d{4})$/, '($1) $2-$3');
+        } else {
+          formattedMom = dddAndNumber.replace(/^(\d{2})(\d{4})(\d{4})$/, '($1) $2-$3');
+        }
+      } else if (rawMom.length === 11) {
+        formattedMom = rawMom.replace(/^(\d{2})(\d{5})(\d{4})$/, '($1) $2-$3');
+      } else if (rawMom.length === 10) {
+        formattedMom = rawMom.replace(/^(\d{2})(\d{4})(\d{4})$/, '($1) $2-$3');
+      }
+      document.getElementById('settingMomPhone').value = formattedMom;
+    }
     if (document.getElementById('settingVenueName')) document.getElementById('settingVenueName').value = data.settings.locationName || '';
     if (document.getElementById('settingVenueAddress')) document.getElementById('settingVenueAddress').value = data.settings.locationAddress || '';
     if (document.getElementById('settingNotice')) document.getElementById('settingNotice').value = data.settings.locationNotice || '';
@@ -672,12 +689,32 @@ window.unreserveGift = async function(giftId, reservationId = null) {
 function initSettingsForm() {
   const form = document.getElementById('adminSettingsForm');
   const btnReset = document.getElementById('btnResetMetrics');
+  const momPhoneInput = document.getElementById('settingMomPhone');
+
+  // Máscara automática de telefone para o WhatsApp da mãe
+  if (momPhoneInput) {
+    momPhoneInput.addEventListener('input', (e) => {
+      let v = e.target.value.replace(/\D/g, '');
+      if (v.length > 11) v = v.substring(0, 11);
+      if (v.length > 10) {
+        v = v.replace(/^(\d{2})(\d{5})(\d{4})$/, '($1) $2-$3');
+      } else if (v.length > 6) {
+        v = v.replace(/^(\d{2})(\d{4})(\d{0,4})$/, '($1) $2-$3');
+      } else if (v.length > 2) {
+        v = v.replace(/^(\d{2})(\d{0,5})$/, '($1) $2');
+      } else if (v.length > 0) {
+        v = v.replace(/^(\d*)$/, '($1');
+      }
+      e.target.value = v;
+    });
+  }
 
   if (form) {
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
 
       const pixKey = document.getElementById('settingPixKey').value.trim();
+      const momPhone = momPhoneInput ? momPhoneInput.value.trim() : '';
       const locationName = document.getElementById('settingVenueName').value.trim();
       const locationAddress = document.getElementById('settingVenueAddress').value.trim();
       const locationNotice = document.getElementById('settingNotice').value.trim();
@@ -690,7 +727,7 @@ function initSettingsForm() {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${adminToken}`
           },
-          body: JSON.stringify({ pixKey, locationName, locationAddress, locationNotice, adminPin })
+          body: JSON.stringify({ pixKey, momPhone, locationName, locationAddress, locationNotice, adminPin })
         });
 
         if (res.ok) {

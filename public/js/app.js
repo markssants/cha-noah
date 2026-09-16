@@ -4,6 +4,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   initVisitorTracking();
+  loadPublicInfo();
   initCountdown();
   initModals();
   initRSVPForm();
@@ -11,6 +12,32 @@ document.addEventListener('DOMContentLoaded', () => {
   initCopyButtons();
   initMusicBox();
 });
+
+let momPhoneNumber = '';
+
+async function loadPublicInfo() {
+  try {
+    const res = await fetch('/api/info');
+    if (res.ok) {
+      const data = await res.json();
+      if (data.momPhone) {
+        momPhoneNumber = data.momPhone;
+      }
+    }
+  } catch (err) {
+    console.debug('Error loading public info:', err);
+  }
+}
+
+function formatWhatsAppNumber(phone) {
+  if (!phone) return '5511999999999';
+  let digits = phone.replace(/\D/g, '');
+  if (!digits) return '5511999999999';
+  if (digits.length === 10 || digits.length === 11) {
+    digits = '55' + digits;
+  }
+  return digits;
+}
 
 // 1. Rastreamento Silencioso de Visitas e Cliques
 let visitorId = localStorage.getItem('noah_visitor_id');
@@ -191,11 +218,11 @@ function initRSVPForm() {
 
           // Configurar link do WhatsApp da mãe
           if (whatsappNotifyBtn) {
-            const rawPhone = phone.replace(/\D/g, '');
             const encodedMsg = encodeURIComponent(
               `Oi! Acabei de confirmar presença no Chá de Bebê do Noah pelo site!\nNome: ${name}\nTotal de pessoas: ${guestsCount} pessoa(s)\nMal podemos esperar! ❤️👶`
             );
-            whatsappNotifyBtn.href = `https://api.whatsapp.com/send?phone=5511999999999&text=${encodedMsg}`;
+            const targetMomPhone = formatWhatsAppNumber(data.momPhone || momPhoneNumber);
+            whatsappNotifyBtn.href = `https://api.whatsapp.com/send?phone=${targetMomPhone}&text=${encodedMsg}`;
           }
 
           // Alternar exibição do form para tela de sucesso

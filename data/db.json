@@ -6,7 +6,7 @@
     "eventDate": "2026-11-15T12:00:00",
     "eventDateDisplay": "15/11 Domingo",
     "eventTimeDisplay": "12:00 Horas",
-    "adminPin": "noah2024",
+    "adminPin": "Noah2026Admin",
     "locationNotice": "kkkkkkkkkkk",
     "locationName": "Chácara & Espaço Recanto das Flores",
     "locationAddress": "Rua das Palmeiras, 350 - Chácaras de Recreio, São Paulo - SP",
@@ -16,10 +16,10 @@
     "pixKey": "noah.chadebebe@email.com",
     "pixReceiver": "Mamãe do Noah",
     "pixBank": "Nubank / Pix",
-    "momPhone": "5511999999999"
+    "momPhone": "+55 19 99503-5910"
   },
   "metrics": {
-    "views": 29,
+    "views": 36,
     "uniqueVisitors": 2,
     "clicks": {
       "btn_local": 9,
@@ -28,10 +28,51 @@
       "btn_pix": 0,
       "btn_waze": 0,
       "btn_maps": 0,
-      "btn_confirmar_submit": 4,
-      "btn_ver_convite": 5
+      "btn_confirmar_submit": 5,
+      "btn_ver_convite": 6
     },
     "history": [
+      {
+        "event": "page_view",
+        "visitorId": "v_1788909841201_tzfafdt",
+        "timestamp": "2026-09-16T06:15:03.939Z"
+      },
+      {
+        "event": "click",
+        "button": "btn_ver_convite",
+        "visitorId": "v_1788909841201_tzfafdt",
+        "timestamp": "2026-09-16T06:14:57.075Z"
+      },
+      {
+        "event": "page_view",
+        "visitorId": "v_1788909841201_tzfafdt",
+        "timestamp": "2026-09-16T06:14:53.131Z"
+      },
+      {
+        "event": "page_view",
+        "visitorId": "v_1788909841201_tzfafdt",
+        "timestamp": "2026-09-16T06:14:51.218Z"
+      },
+      {
+        "event": "page_view",
+        "visitorId": "v_1788909841201_tzfafdt",
+        "timestamp": "2026-09-16T06:14:42.270Z"
+      },
+      {
+        "event": "page_view",
+        "visitorId": "v_1788909841201_tzfafdt",
+        "timestamp": "2026-09-16T06:13:15.644Z"
+      },
+      {
+        "event": "page_view",
+        "visitorId": "v_1788909841201_tzfafdt",
+        "timestamp": "2026-09-16T06:10:33.424Z"
+      },
+      {
+        "event": "page_view",
+        "visitorId": "v_1788909841201_tzfafdt",
+        "timestamp": "2026-09-16T06:07:11.214Z"
+      },
       {
         "event": "click",
         "button": "btn_local",
@@ -337,30 +378,6 @@
     ]
   },
   "rsvps": [
-    {
-      "id": "rsvp_1788917602863_eg8xq",
-      "name": "nnlnlinilnln",
-      "phone": "(79) 98797-8978",
-      "guestsCount": 3,
-      "message": "lnilninini",
-      "createdAt": "2026-09-09T01:33:22.863Z"
-    },
-    {
-      "id": "rsvp_1788911934829_uzgm7",
-      "name": "flavia barros",
-      "phone": "(12) 38172-3918",
-      "guestsCount": 3,
-      "message": "asdnalisdnliasnlidas",
-      "createdAt": "2026-09-08T23:58:54.829Z"
-    },
-    {
-      "id": "rsvp_1788911644351_uvusf",
-      "name": "hohohohuihun",
-      "phone": "(58) 76786-8768",
-      "guestsCount": 2,
-      "message": "huhluhnlinilnil",
-      "createdAt": "2026-09-08T23:54:04.351Z"
-    },
     {
       "id": "rsvp_manual_1788909801924",
       "name": "Madrinha Juliana",

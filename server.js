@@ -78,7 +78,7 @@ function checkAdminAuth(req, res, next) {
   const authHeader = req.headers.authorization;
   const pin = authHeader && authHeader.startsWith('Bearer ') ? authHeader.substring(7) : null;
   const db = readDB();
-  const validPin = (db.settings && db.settings.adminPin) || 'noah2024';
+  const validPin = (db.settings && db.settings.adminPin) || 'Noah2026Admin';
 
   if (!pin || pin !== validPin) {
     return res.status(401).json({ error: 'Não autorizado. Senha/PIN incorreto.' });
@@ -179,7 +179,8 @@ app.post('/api/rsvp', (req, res) => {
   res.json({
     success: true,
     message: 'Presença confirmada com sucesso! Muito obrigado pelo carinho.',
-    rsvp: newRsvp
+    rsvp: newRsvp,
+    momPhone: (db.settings && db.settings.momPhone) || ''
   });
 });
 
@@ -242,7 +243,7 @@ app.post('/api/admin/login', (req, res) => {
   }
 
   const db = readDB();
-  const validPin = (db.settings && db.settings.adminPin) || 'noah2024';
+  const validPin = (db.settings && db.settings.adminPin) || 'Noah2026Admin';
 
   if (pin.trim() === validPin) {
     return res.json({ success: true, token: validPin });
@@ -469,6 +470,6 @@ app.listen(PORT, () => {
   console.log(`\n========================================`);
   console.log(`✨ Chá de Bebê do Noah - Servidor Online!`);
   console.log(`🌐 Site Principal: http://localhost:${PORT}`);
-  console.log(`👑 Painel da Mamãe: http://localhost:${PORT}/admin (Senha padrão: noah2024)`);
+  console.log(`👑 Painel da Mamãe: http://localhost:${PORT}/admin (Senha padrão: Noah2026Admin)`);
   console.log(`========================================\n`);
 });
