@@ -23,6 +23,30 @@ async function loadPublicInfo() {
       if (data.momPhone) {
         momPhoneNumber = data.momPhone;
       }
+      if (data.pixKey) {
+        const pixEl = document.getElementById('pixKeyText');
+        if (pixEl) pixEl.textContent = data.pixKey;
+      }
+      if (data.locationName) {
+        const venueEl = document.getElementById('locationVenueName');
+        if (venueEl) venueEl.textContent = data.locationName;
+      }
+      if (data.locationAddress) {
+        const addrEl = document.getElementById('locationAddressText');
+        if (addrEl) addrEl.textContent = data.locationAddress;
+      }
+      if (data.locationMapsLink) {
+        const mapsEl = document.getElementById('linkMaps');
+        if (mapsEl) mapsEl.href = data.locationMapsLink;
+      }
+      if (data.locationWazeLink) {
+        const wazeEl = document.getElementById('linkWaze');
+        if (wazeEl) wazeEl.href = data.locationWazeLink;
+      }
+      if (data.locationMapEmbed) {
+        const iframe = document.querySelector('.location-map-container iframe');
+        if (iframe) iframe.src = data.locationMapEmbed;
+      }
     }
   } catch (err) {
     console.debug('Error loading public info:', err);
