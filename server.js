@@ -6,6 +6,8 @@ const app = express();
 const PORT = process.env.PORT || 3030;
 const DB_FILE = path.join(__dirname, 'data', 'db.json');
 
+const { MongoClient } = require('mongodb');
+
 // Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -14,23 +16,34 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/img', express.static(path.join(__dirname, 'img')));
 
+// MongoDB Configuration & Memory Cache
+const MONGODB_URI = process.env.MONGODB_URI;
+let mongoClient = null;
+let dbCollection = null;
+let memoryDB = null;
+
 // Helper: Read DB
 function readDB() {
+  if (memoryDB) {
+    return memoryDB;
+  }
   try {
     const raw = fs.readFileSync(DB_FILE, 'utf8');
     const data = JSON.parse(raw);
     if (data && Array.isArray(data.gifts)) {
       data.gifts = data.gifts.map(normalizeGift);
     }
-    return data;
+    memoryDB = data;
+    return memoryDB;
   } catch (err) {
     console.error('Error reading db.json:', err);
-    return {
+    memoryDB = {
       settings: {},
       metrics: { views: 0, uniqueVisitors: 0, clicks: {}, history: [] },
       rsvps: [],
       gifts: []
     };
+    return memoryDB;
   }
 }
 
@@ -59,17 +72,73 @@ function normalizeGift(gift) {
   return gift;
 }
 
-// Helper: Write DB safely
+// Helper: Write DB safely to Mongo and/or local db.json
 function writeDB(data) {
   try {
     if (data && Array.isArray(data.gifts)) {
       data.gifts = data.gifts.map(normalizeGift);
     }
+    memoryDB = data;
+
+    // Persist to local file
     fs.writeFileSync(DB_FILE, JSON.stringify(data, null, 2), 'utf8');
+
+    // Persist to MongoDB if connected
+    if (dbCollection) {
+      dbCollection.updateOne(
+        { _id: 'main_store' },
+        { $set: { data: data, updatedAt: new Date() } },
+        { upsert: true }
+      ).catch(err => console.error('Erro ao salvar no MongoDB Atlas:', err));
+    }
     return true;
   } catch (err) {
-    console.error('Error writing db.json:', err);
+    console.error('Error writing db:', err);
     return false;
+  }
+}
+
+// Connect to MongoDB Atlas (if MONGODB_URI is provided)
+async function initDatabase() {
+  // Always load initial data into memory from local db.json first
+  readDB();
+
+  if (!MONGODB_URI) {
+    console.log('ℹ️ MONGODB_URI não configurada. Usando arquivo local data/db.json');
+    return;
+  }
+
+  try {
+    console.log('🔄 Conectando ao MongoDB Atlas...');
+    mongoClient = new MongoClient(MONGODB_URI);
+    await mongoClient.connect();
+    const db = mongoClient.db('cha_noah');
+    dbCollection = db.collection('app_data');
+    console.log('✅ Conectado ao MongoDB Atlas com sucesso!');
+
+    // Fetch existing data from MongoDB
+    const doc = await dbCollection.findOne({ _id: 'main_store' });
+    if (doc && doc.data) {
+      console.log('📦 Dados carregados do MongoDB Atlas!');
+      memoryDB = doc.data;
+      if (Array.isArray(memoryDB.gifts)) {
+        memoryDB.gifts = memoryDB.gifts.map(normalizeGift);
+      }
+      // Backup/sync to local file
+      fs.writeFileSync(DB_FILE, JSON.stringify(memoryDB, null, 2), 'utf8');
+    } else {
+      // First time initialization: seed MongoDB with existing local db.json
+      console.log('🚀 Inicializando dados do db.json no MongoDB Atlas pela primeira vez...');
+      await dbCollection.updateOne(
+        { _id: 'main_store' },
+        { $set: { data: memoryDB, updatedAt: new Date() } },
+        { upsert: true }
+      );
+      console.log('✅ Dados iniciais gravados no MongoDB Atlas!');
+    }
+  } catch (err) {
+    console.error('❌ Erro ao conectar no MongoDB Atlas:', err.message);
+    console.log('⚠️ Continuando com armazenamento em data/db.json...');
   }
 }
 
@@ -466,10 +535,12 @@ app.get('*', (req, res) => {
 });
 
 // Start Server
-app.listen(PORT, () => {
-  console.log(`\n========================================`);
-  console.log(`✨ Chá de Bebê do Noah - Servidor Online!`);
-  console.log(`🌐 Site Principal: http://localhost:${PORT}`);
-  console.log(`👑 Painel da Mamãe: http://localhost:${PORT}/admin (Senha padrão: Noah2026Admin)`);
-  console.log(`========================================\n`);
+initDatabase().finally(() => {
+  app.listen(PORT, () => {
+    console.log(`\n========================================`);
+    console.log(`✨ Chá de Bebê do Noah - Servidor Online!`);
+    console.log(`🌐 Site Principal: http://localhost:${PORT}`);
+    console.log(`👑 Painel da Mamãe: http://localhost:${PORT}/admin (Senha padrão: Noah2026Admin)`);
+    console.log(`========================================\n`);
+  });
 });
